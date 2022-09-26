@@ -1,0 +1,98 @@
+<div class="row">
+  <div class="col-12 back-tela">
+    <div class="row">
+      <div class="col-2 text-center"><a href="/" class="link-volta">
+        <i class="fa-solid fa-3x fa-chevron-left mt-5"></i>
+      </a></div>
+      <div class="col-8 painel-compras">
+        <div class="row mt-5">
+          <div class="col-8 borda-direita scroll">
+            <div class="row">
+              <div class="col-12">
+                <label for="" class="font-inputs">Nome Completo</label>
+                <input type="text" class="form-control" [(ngModel)]="nome" id="nome">
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-3">
+                <label class="font-inputs">CEP de Entrega</label>
+                <input type="text" maxlength="8" [(ngModel)]="cepDigitado" (blur)="buscaCep()" class="form-control" id="cep">
+              </div>
+              <div class="col-3">
+                <button (click)="buscaDistancia()" class="btn btn-primary" style="margin-top: 33px;"><i class="fa-solid fa-truck-fast"></i> Frete</button>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-10">
+                <label for="" class="font-inputs">Endereço de Entrega</label>
+                <input type="text" class="form-control" [(ngModel)]="rua">
+              </div>
+              <div class="col-2">
+                <label for="" class="font-inputs">Nº</label>
+                <input type="text" class="form-control" [(ngModel)]="numero">
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-6">
+                <label class="font-inputs">Bairro</label>
+                <input type="text" class="form-control" [(ngModel)]="bairro">
+              </div>
+              <div class="col-6">
+                <label class="font-inputs">Cidade</label>
+                <input type="text" class="form-control" [(ngModel)]="cidade">
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-6">
+                <label for="" class="font-inputs">Valor em Real</label>
+                <input type="text" class="form-control" [(ngModel)]="real" (keyup)="transformaDolar()">
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-6">
+                <label for="" class="font-inputs">Valor em Dólar</label>
+                <input type="text" class="form-control" [(ngModel)]="dolar" (keyup)="transformaReal()">
+              </div>
+            </div>
+          </div>
+          <div class="col-4 scroll">
+            <div class="row">
+              <div class="col-12 text-center">
+                <label class="font-inputs">RESUMO DA COMPRA</label>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-12">
+                <label class="font-titulo-resumo">nome</label> <br>
+                <label class="">{{nome}}</label>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-12">
+                <label class="font-titulo-resumo" >endereço</label> <br>
+                <label class="">{{rua}}, {{numero}} - {{bairro}} - {{cidade}}</label>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-6">
+                <label class="font-titulo-resumo">frete</label> <br>
+                <label class="">R$ {{frete}}</label>
+              </div>
+              <div class="col-6">
+                <label class="font-titulo-resumo">TOTAL</label> <br>
+                <label class="">R$ {{soma(frete, real)}}</label>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-12 text-center">
+                <button class="btn btn-success" (click)="add()">Finalizar Compra</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+      </div>
+    </div>
+  </div>
+</div>

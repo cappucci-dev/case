@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-12 back-tela text-center">
+    <img class="logo-home" src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/nxrjtruuktq9vd8qgt00" alt=""><br>
+    <a href="compra"><label class="font-comprar">INICIAR COMPRA</label></a>
+    <div class="row text-center">
+      <div class="col-4"></div>
+      <div class="col-4 text-center" >
+        <label class="font-ultima mt-5">Últimas Compras</label>
+        <div style="margin-top: 2vh; max-height: 200px; overflow: auto;">
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">CEP</th>
+                <th scope="col">Dolar</th>
+                <th scope="col">Distância</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of compras">
+                <th scope="row">{{item.nome}}</th>
+                <td>{{item.cep}}</td>
+                <td>$ {{item.valor}}</td>
+                <td>{{item.distancia}} KM</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
